@@ -19,6 +19,6 @@ categories: documents
         - 新浪微博监听机器人： 一个基于Node.js的定时监听程序，定时通过新浪的移动端API查询是否有新的微博。有新微博时，通过Websocket连接酷Q向应援会大群播报。此服务无需通过应援会API读写数据。
         - 应援会大群应答机器人： 一个基于Node.js的事件驱动程序。此程序通过Websocket与酷Q机器人对接；大群有新的信息或有新人加群时，酷Q机器人会生成一个新的事件。如果该事件是一条新的消息，应答机器人会向应援会API查询应答关键词；如果该消息包含相关关键词，则会向大群播报该关键词的应答消息。如果该事件是新人加群，应答机器人会向应援会API查询入群欢迎消息，然后向群内的新成员播报。
 
-![My helpful screenshot](/assets/architecture_overview.jpg)
+![architecture overview](docs/assets/architecture_overview.jpg)
 
 这样的API服务器/客户端架构意味着应援会管理可以通过Django的管理页面直接修改应答关键词和信息以及加群信息，而无需修改代码或通过SSH/远程桌面登录服务器实例修改酷Q机器人的插件配置，也给应援会的其他IT服务（例如应援会网站等）留下了拓展的空间。
